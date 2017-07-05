@@ -98,7 +98,7 @@ export default class Home extends Component {
                 <Icon name="user-circle" size={100} color="rgba(0,0,0,.09)" />
               </View>
               <Text style={styles.text}>
-                Please log in to continue {"\n"}
+                Please login to continue {"\n"}
                 to the awesomness
               </Text>
             </View>
@@ -107,7 +107,7 @@ export default class Home extends Component {
         { user
           ? // Show user info if already logged in
           <View style={styles.content}>
-            <View style={styles.buttons} >
+            <View style={styles.navBtns} >
               <Button
               onPress={() => {
                 navigate("Translation")
@@ -123,7 +123,7 @@ export default class Home extends Component {
             </View>
           </View>
           : // Show Ouath buttons if not
-          <View style={styles.buttons}>
+          <View style={styles.oAuthBtns}>
             <Icon.Button
               name="facebook"
               backgroundColor="#3b5998"
@@ -172,6 +172,7 @@ let styles = StyleSheet.create({
   },
   header: {
     fontSize: 20,
+    fontWeight: "500",
     textAlign: "center",
     margin: 10,
   },
@@ -180,10 +181,14 @@ let styles = StyleSheet.create({
     color: "#333",
     marginBottom: 5,
   },
-  buttons: {
+  oAuthBtns: {
     justifyContent: "space-between",
     flexDirection: "row",
     margin: 30,
     marginBottom: 30,
   },
+  navBtns: {
+    justifyContent: "space-between",
+    flexDirection: "column"
+  }
 });

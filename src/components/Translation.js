@@ -44,14 +44,9 @@ export default class Translation extends Component{
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.titleContainer}>
-          <Text style={styles.title}>
-            Text-to-Text Translation
-          </Text>
-        </View>
         <View style={styles.langContainer}>
           <View  style={styles.eachContainer}>
-            <Text style={styles.pickerTitle}>Source Language</Text>
+            <Text style={styles.pickerTitle}>Original Language</Text>
             <Picker
               style={styles.pickerMenu}
               selectedValue={this.state.langSource}
@@ -80,13 +75,16 @@ export default class Translation extends Component{
             style={styles.inputText}
             onChangeText={(textInput) => this.setState({textInput})}
             keyboardType={"default"}
+            multiline = {true}
           />
           <TouchableOpacity style={styles.translationBtn}
             onPress={() => this.tranaslateText(this.state.textInput, this.state.langSource, this.state.langTarget)}
           >
             <Text style={styles.translationBtnText}>Translate!</Text>
           </TouchableOpacity>
-          <Text style={styles.outputText}>
+          <Text style={styles.outputText}
+            multiline = {true}
+            >
             {this.state.textOutput}
           </Text>
         </View>
@@ -98,18 +96,6 @@ export default class Translation extends Component{
 let styles = StyleSheet.create({
   container: {
     flex: 6
-  },
-  titleContainer: {
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    borderBottomColor: "#C59A6D"
-  },
-  title: {
-    color: "#C59A6D",
-    fontSize: 24,
-    fontWeight: "700"
   },
   langContainer: {
     flex: 3,
@@ -123,11 +109,13 @@ let styles = StyleSheet.create({
     alignItems: "stretch"
   },
   pickerTitle: {
-    marginTop: 50
+    fontSize: 18,
+    marginTop: 50,
   },
   pickerMenu: {
     width: 100,
-    marginTop: -15
+    marginTop: -15,
+    marginLeft: 15
   },
   translationContainer: {
     flex: 3,
@@ -135,10 +123,10 @@ let styles = StyleSheet.create({
   inputText: {
     width: 200,
     height: 50,
+    fontSize: 18,
     marginLeft: 85,
     marginTop: 15,
-    marginBottom: 15,
-    // borderRadius: 20,
+    marginBottom: 30,
     padding: 5,
     backgroundColor: "whitesmoke",
   },
@@ -165,13 +153,13 @@ let styles = StyleSheet.create({
     width: 200,
     height: 50,
     marginLeft: 85,
-    marginTop: 15,
+    marginTop: 30,
     marginBottom: 15,
     borderRadius: 50,
     padding: 10,
     paddingTop: 15,
     fontSize: 18,
-    backgroundColor: "#4A90E2",
+    backgroundColor: "rgba(73, 143, 226, 0.69)",
     color: "white",
   }
 });

@@ -49,21 +49,16 @@ export default class Dictionary extends Component{
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.titleContainer}>
-          <Text style={styles.title}>
-            Text-to-Speech Conversion
-          </Text>
-        </View>
-        <View style={styles.translationContainer}>
+        <View style={styles.dictionaryContainer}>
           <TextInput
             style={styles.inputText}
             onChangeText={(textContent) => this.setState({textContent})}
             keyboardType={"default"}
           />
-          <TouchableOpacity style={styles.translationBtn}
+          <TouchableOpacity style={styles.DictionaryBtn}
             onPress={() => this.wordDefining(this.state.textContent)}
           >
-            <Text style={styles.translationBtnText}>Convert!</Text>
+            <Text style={styles.DictionaryBtnText}>Define the Word</Text>
           </TouchableOpacity>
           <Text style={styles.outputText}>
             {this.state.textDefinition}
@@ -76,56 +71,26 @@ export default class Dictionary extends Component{
 
 let styles = StyleSheet.create({
   container: {
-    flex: 6
+    flex: 1
   },
-  titleContainer: {
+  dictionaryContainer: {
     flex: 1,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    // backgroundColor: "lightgray",
-    borderBottomColor: "#C59A6D"
-  },
-  title: {
-    color: "#C59A6D",
-    fontSize: 24,
-    fontWeight: "700"
-  },
-  langContainer: {
-    flex: 3,
-    flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: "flex-start"
-  },
-  eachContainer: {
     flexDirection: "column",
     justifyContent: "space-around",
-    alignItems: "stretch"
-  },
-  pickerTitle: {
-    marginTop: 50
-  },
-  pickerMenu: {
-    width: 100,
-    marginTop: -15
-  },
-  translationContainer: {
-    flex: 3,
-    // backgroundColor: "lightgray"
   },
   inputText: {
     width: 200,
     height: 50,
     marginLeft: 85,
-    marginTop: 15,
-    marginBottom: 15,
-    // borderRadius: 20,
+    marginTop: 0,
+    marginBottom: -150,
     padding: 5,
     backgroundColor: "whitesmoke",
   },
-  translationBtn: {
-    width: 110,
-    marginLeft: 130,
+  DictionaryBtn: {
+    width: 165,
+    marginTop: 100,
+    marginLeft: 100,
     backgroundColor: "#C59A6D",
     borderRadius: 10,
     padding: 5,
@@ -137,17 +102,17 @@ let styles = StyleSheet.create({
     shadowRadius: 10,
     shadowOpacity: 0.25
   },
-  translationBtnText: {
+  DictionaryBtnText: {
     color: "white",
     fontSize: 18,
     marginLeft: 10
   },
   outputText: {
     width: 200,
-    height: 50,
+    height: 300,
     marginLeft: 85,
-    marginTop: 15,
-    marginBottom: 15,
+    marginTop: -45,
+    marginBottom: 100,
     borderRadius: 50,
     padding: 10,
     paddingTop: 15,
