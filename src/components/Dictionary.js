@@ -112,7 +112,7 @@ let styles = StyleSheet.create({
   },
   outputText: {
     width: 200,
-    height: 300,
+    height: 150,
     marginLeft: 85,
     marginTop: -45,
     marginBottom: 100,
