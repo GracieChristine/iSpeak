@@ -117,8 +117,8 @@ let styles = StyleSheet.create({
     padding: 10,
     paddingTop: 15,
     fontSize: 18,
-    backgroundColor: "#4A90E2",
-    color: "white",
+    backgroundColor: "rgba(198, 155, 110, 0.5)",
+    color: "black",
   }
 });
 
