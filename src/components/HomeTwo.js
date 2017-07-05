@@ -14,7 +14,7 @@ import SafariView from "react-native-safari-view";
 
 export default class Home extends Component {
   static navigationOptions = {
-    title: 'iSpeak',
+    title: 'Profile',
   };
 
   constructor(props) {
@@ -82,76 +82,31 @@ export default class Home extends Component {
     let { user } = this.state;
     return (
       <View style={styles.container}>
-        { user
-          ? // Show user info if already logged in
-            <View style={styles.content}>
-              <Text style={styles.header}>
-                Welcome {user.name}!
-              </Text>
-            </View>
-          : // Show Please log in message if not
-            <View style={styles.content}>
-              <Text style={styles.header}>
-                Welcome Stranger!
-              </Text>
-              <View style={styles.avatar}>
-                <Icon name="user-circle" size={100} color="rgba(0,0,0,.09)" />
-              </View>
-              <Text style={styles.text}>
-                Please login to continue {"\n"}
-                to the awesomness
-              </Text>
-            </View>
-        }
-        {/* Login / Redirect buttons */}
-        { user
-          ? // Show user info if already logged in
-          <View style={styles.content}>
-            <View style={styles.navBtns} >
-              <Button
-              onPress={() => {
-                navigate("Translation")
-              }}
-              title="Text Translation"
-              />
-              <Button
-              onPress={() => {
-                navigate("Dictionary")
-              }}
-              title="Text Definition"
-              />
-            </View>
+
+
+        <View style={styles.content}>
+          <Text style={styles.header}>
+            Welcome Grace Li!
+          </Text>
+          <Text style={styles.text}>
+            Please click to continue {"\n"}
+            to the awesomness
+          </Text>
+          <View style={styles.navBtns} >
+            <Button
+            onPress={() => {
+              navigate("Translation")
+            }}
+            title="Text Translation"
+            />
+            <Button
+            onPress={() => {
+              navigate("Dictionary")
+            }}
+            title="Text Definition"
+            />
           </View>
-          : // Show Ouath buttons if not
-          <View>
-            <View style={styles.navBtns} >
-              <Button
-              onPress={() => {
-                navigate("HomeTwo")
-              }}
-              title="Login Now"
-              />
-            </View>
-            <View style={styles.oAuthBtns}>
-              <Icon.Button
-                name="facebook"
-                backgroundColor="#3b5998"
-                onPress={this.loginWithFacebook}
-                {...iconStyles}
-              >
-                Facebook Login
-              </Icon.Button>
-              <Icon.Button
-                name="google"
-                backgroundColor="#DD4B39"
-                onPress={this.loginWithGoogle}
-                {...iconStyles}
-              >
-                Google Login
-              </Icon.Button>
-            </View>
-          </View>
-        }
+        </View>
       </View>
     );
   }
@@ -169,8 +124,8 @@ let styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    flexDirection: "column",
+    justifyContent: "space-around",
   },
   avatar: {
     margin: 20,

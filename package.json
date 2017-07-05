@@ -7,16 +7,11 @@
     "test": "jest"
   },
   "dependencies": {
-    "fastlane": "^0.1.0",
-    "gym": "^0.2.2",
-    "match": "^1.2.7",
-    "pilot": "^0.1.1",
     "react": "16.0.0-alpha.6",
     "react-native": "0.44.0",
     "react-native-safari-view": "^2.0.0",
     "react-native-vector-icons": "^4.0.1",
-    "react-navigation": "^1.0.0-beta.11",
-    "supply": "0.0.4"
+    "react-navigation": "^1.0.0-beta.11"
   },
   "devDependencies": {
     "babel-jest": "19.0.0",

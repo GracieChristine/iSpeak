@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   Image,
   Linking,
@@ -6,16 +6,18 @@ import {
   Platform,
   Text,
   View
-} from 'react-native';
+} from "react-native";
 
-import Home from './Home';
-import Translation from './Translation';
-import Dictionary from './Dictionary';
+import Home from "./Home";
+import HomeTwo from "./HomeTwo"
+import Translation from "./Translation";
+import Dictionary from "./Dictionary";
 
 import { StackNavigator } from "react-navigation";
 
 const TranslatorApp = StackNavigator({
   Home: { screen: Home },
+  HomeTwo: { screen: HomeTwo },
   Translation: { screen: Translation },
   Dictionary: { screen: Dictionary }
 });
@@ -38,6 +40,6 @@ const iconStyles = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFF',
+    backgroundColor: "#FFF",
   }
 });
