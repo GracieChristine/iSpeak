@@ -13,7 +13,6 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import SafariView from "react-native-safari-view";
 
 export default class Home extends Component {
-
   static navigationOptions = {
     title: 'iSpeak',
   };
@@ -113,8 +112,14 @@ export default class Home extends Component {
               onPress={() => {
                 navigate("Translation")
               }}
-              title="Translate Text"
-            />
+              title="Text Translation"
+              />
+              <Button
+              onPress={() => {
+                navigate("Dictionary")
+              }}
+              title="Text Definition"
+              />
             </View>
           </View>
           : // Show Ouath buttons if not

@@ -10,13 +10,14 @@ import {
 
 import Home from './Home';
 import Translation from './Translation';
-
+import Dictionary from './Dictionary';
 
 import { StackNavigator } from "react-navigation";
 
 const TranslatorApp = StackNavigator({
   Home: { screen: Home },
-  Translation: { screen: Translation }
+  Translation: { screen: Translation },
+  Dictionary: { screen: Dictionary }
 });
 
 export default class App extends Component {

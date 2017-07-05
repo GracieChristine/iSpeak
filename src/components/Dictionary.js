@@ -11,30 +11,35 @@ import {
 
 import Config from "../../config.js";
 
-export default class Translation extends Component{
+export default class Dictionary extends Component{
 
   static navigationOptions = {
-    title: 'Text Translation',
+    title: 'Text Definition',
   };
 
   constructor(props) {
     super(props);
     this.state = {
-      textInput: "Hello world",
-      textOutput: "",
-      langSource: "en",
-      langTarget: "en"
+      textContent: "",
+      textDefinition: ""
     };
   }
 
-  tranaslateText(textInput, langSource, langTarget) {
-    // console.log("langSource", langSource);
-    fetch(`https://translation.googleapis.com/language/translate/v2?q=${textInput}&target=${langTarget}&format=text&source=${langSource}&key=${Config.googleAPIKey}`)
+  wordDefining(textContent) {
+    console.log("textContent", textContent);
+    fetch(`https://od-api.oxforddictionaries.com:443/api/v1/entries/en/${textContent}/definitions`, {
+      headers: {
+        "Accept": "application/json",
+        "app_id": `${Config.oxfordId}`,
+        "app_key": `${Config.oxfordKey}`
+      }
+    })
       .then((response) => response.json())
       .then((responseJSON) => {
-        console.log(responseJSON.data.translations[0].translatedText);
-        const text = responseJSON.data.translations[0].translatedText;
-        this.setState({textOutput: text})
+        console.log(responseJSON);
+        console.log(responseJSON.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]);
+        const definition = responseJSON.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0];
+        this.setState({textDefinition: definition})
       })
       .catch((error) => {
         console.error(error);
@@ -46,48 +51,22 @@ export default class Translation extends Component{
       <View style={styles.container}>
         <View style={styles.titleContainer}>
           <Text style={styles.title}>
-            Text-to-Text Translation
+            Text-to-Speech Conversion
           </Text>
-        </View>
-        <View style={styles.langContainer}>
-          <View  style={styles.eachContainer}>
-            <Text style={styles.pickerTitle}>Source Language</Text>
-            <Picker
-              style={styles.pickerMenu}
-              selectedValue={this.state.langSource}
-              onValueChange={(itemValue, itemIndex) => this.setState({langSource: itemValue})}>
-              <Picker.Item label="English" value="en" />
-              <Picker.Item label="Español" value="es" />
-              <Picker.Item label="國語" value="zh" />
-              <Picker.Item label="Français" value="fr" />
-            </Picker>
-          </View>
-          <View style={styles.eachContainer}>
-            <Text style={styles.pickerTitle}>Target Language</Text>
-            <Picker
-              style={styles.pickerMenu}
-              selectedValue={this.state.langTarget}
-              onValueChange={(itemValue, itemIndex) => this.setState({langTarget: itemValue})}>
-              <Picker.Item label="English" value="en" />
-              <Picker.Item label="Español" value="es" />
-              <Picker.Item label="國語" value="zh" />
-              <Picker.Item label="Français" value="fr" />
-            </Picker>
-          </View>
         </View>
         <View style={styles.translationContainer}>
           <TextInput
             style={styles.inputText}
-            onChangeText={(textInput) => this.setState({textInput})}
+            onChangeText={(textContent) => this.setState({textContent})}
             keyboardType={"default"}
           />
           <TouchableOpacity style={styles.translationBtn}
-            onPress={() => this.tranaslateText(this.state.textInput, this.state.langSource, this.state.langTarget)}
+            onPress={() => this.wordDefining(this.state.textContent)}
           >
-            <Text style={styles.translationBtnText}>Translate!</Text>
+            <Text style={styles.translationBtnText}>Convert!</Text>
           </TouchableOpacity>
           <Text style={styles.outputText}>
-            {this.state.textOutput}
+            {this.state.textDefinition}
           </Text>
         </View>
       </View>
@@ -104,6 +83,7 @@ let styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
+    // backgroundColor: "lightgray",
     borderBottomColor: "#C59A6D"
   },
   title: {
@@ -131,6 +111,7 @@ let styles = StyleSheet.create({
   },
   translationContainer: {
     flex: 3,
+    // backgroundColor: "lightgray"
   },
   inputText: {
     width: 200,
@@ -176,4 +157,4 @@ let styles = StyleSheet.create({
   }
 });
 
-module.exports = Translation;
+module.exports = Dictionary;
