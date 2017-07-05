@@ -52,6 +52,7 @@ export default class Dictionary extends Component{
         <View style={styles.dictionaryContainer}>
           <TextInput
             style={styles.inputText}
+            placeholder="Type here to define!"
             onChangeText={(textContent) => this.setState({textContent})}
             keyboardType={"default"}
           />
@@ -86,6 +87,8 @@ let styles = StyleSheet.create({
     marginBottom: -150,
     padding: 5,
     backgroundColor: "whitesmoke",
+    borderColor: "#C59A6D",
+    borderWidth: 1
   },
   DictionaryBtn: {
     width: 165,

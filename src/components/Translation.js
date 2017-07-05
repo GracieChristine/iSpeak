@@ -73,9 +73,10 @@ export default class Translation extends Component{
         <View style={styles.translationContainer}>
           <TextInput
             style={styles.inputText}
+            // multiline = {true}
+            placeholder="Type here to translate!"
             onChangeText={(textInput) => this.setState({textInput})}
             keyboardType={"default"}
-            multiline = {true}
           />
           <TouchableOpacity style={styles.translationBtn}
             onPress={() => this.tranaslateText(this.state.textInput, this.state.langSource, this.state.langTarget)}
@@ -129,6 +130,8 @@ let styles = StyleSheet.create({
     marginBottom: 30,
     padding: 5,
     backgroundColor: "whitesmoke",
+    borderColor: "#C59A6D",
+    borderWidth: 1
   },
   translationBtn: {
     width: 110,
