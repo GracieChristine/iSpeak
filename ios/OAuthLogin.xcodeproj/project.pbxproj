@@ -1194,6 +1194,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.OAuthLogin;
 				PRODUCT_NAME = OAuthLogin;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1222,6 +1223,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.OAuthLogin;
 				PRODUCT_NAME = OAuthLogin;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

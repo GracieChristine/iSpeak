@@ -73,7 +73,7 @@ export default class Translation extends Component{
         <View style={styles.translationContainer}>
           <TextInput
             style={styles.inputText}
-            // multiline = {true}
+            multiline={true}
             placeholder="Type here to translate!"
             onChangeText={(textInput) => this.setState({textInput})}
             keyboardType={"default"}
@@ -84,7 +84,6 @@ export default class Translation extends Component{
             <Text style={styles.translationBtnText}>Translate!</Text>
           </TouchableOpacity>
           <Text style={styles.outputText}
-            multiline = {true}
             >
             {this.state.textOutput}
           </Text>
@@ -123,10 +122,10 @@ let styles = StyleSheet.create({
   },
   inputText: {
     width: 200,
-    height: 50,
+    height: 75,
     fontSize: 18,
     marginLeft: 85,
-    marginTop: 15,
+    marginTop: -15,
     marginBottom: 30,
     padding: 5,
     backgroundColor: "whitesmoke",
@@ -154,7 +153,7 @@ let styles = StyleSheet.create({
   },
   outputText: {
     width: 200,
-    height: 50,
+    height: 100,
     marginLeft: 85,
     marginTop: 30,
     marginBottom: 15,
