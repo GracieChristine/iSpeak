@@ -1,6 +1,6 @@
 # Capstone - iSpeak
 
-Video Demo:
+Video Demo: https://youtu.be/PvWy-7EJgfo
 
 ## Project Description
 A native mobile app easing language barrier via utilizing Google Translate and Oxford Dictionary APIs.
