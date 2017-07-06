@@ -73,8 +73,8 @@ export default class Translation extends Component{
         <View style={styles.translationContainer}>
           <TextInput
             style={styles.inputText}
-            // multiline={true}
-            placeholder="Type here to translate!"
+            multiline={true}
+            placeholder="Type here to translate!" placeholderTextColor="gray"
             onChangeText={(textInput) => this.setState({textInput})}
             keyboardType={"default"}
           />

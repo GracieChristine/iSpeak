@@ -52,7 +52,7 @@ export default class Dictionary extends Component{
         <View style={styles.dictionaryContainer}>
           <TextInput
             style={styles.inputText}
-            placeholder="Type here to define!"
+            placeholder="Type here to define!" placeholderTextColor="gray"
             onChangeText={(textContent) => this.setState({textContent})}
             keyboardType={"default"}
           />
