@@ -14,7 +14,7 @@ import SafariView from "react-native-safari-view";
 
 export default class Home extends Component {
   static navigationOptions = {
-    title: 'iSpeak',
+    title: "iSpeak",
   };
 
   constructor(props) {
@@ -125,12 +125,12 @@ export default class Home extends Component {
           : // Show Ouath buttons if not
           <View>
             <View style={styles.navBtns} >
-              <Button
+              {/* <Button
               onPress={() => {
                 navigate("HomeTwo")
               }}
               title="Login Now"
-              />
+              /> */}
             </View>
             <View style={styles.oAuthBtns}>
               <Icon.Button

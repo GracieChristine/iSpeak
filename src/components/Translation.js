@@ -14,7 +14,7 @@ import Config from "../../config.js";
 export default class Translation extends Component{
 
   static navigationOptions = {
-    title: 'Text Translation',
+    title: "Text Translation",
   };
 
   constructor(props) {
@@ -77,6 +77,7 @@ export default class Translation extends Component{
             placeholder="Type here to translate!" placeholderTextColor="gray"
             onChangeText={(textInput) => this.setState({textInput})}
             keyboardType={"default"}
+            blurOnSubmit={"true"}
           />
           <TouchableOpacity style={styles.translationBtn}
             onPress={() => this.tranaslateText(this.state.textInput, this.state.langSource, this.state.langTarget)}
@@ -153,7 +154,7 @@ let styles = StyleSheet.create({
   },
   outputText: {
     width: 200,
-    height: 100,
+    height: 150,
     marginLeft: 85,
     marginTop: 30,
     marginBottom: 15,

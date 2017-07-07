@@ -14,7 +14,7 @@ import SafariView from "react-native-safari-view";
 
 export default class Home extends Component {
   static navigationOptions = {
-    title: 'Profile',
+    title: "Profile",
   };
 
   constructor(props) {

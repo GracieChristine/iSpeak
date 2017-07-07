@@ -14,7 +14,7 @@ import Config from "../../config.js";
 export default class Dictionary extends Component{
 
   static navigationOptions = {
-    title: 'Text Definition',
+    title: "Text Definition",
   };
 
   constructor(props) {

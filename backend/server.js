@@ -1,9 +1,9 @@
-import express from 'express';
-import passport from 'passport';
-import FacebookStrategy from 'passport-facebook';
-import GoogleStrategy from 'passport-google-oauth20';
+import express from "express";
+import passport from "passport";
+import FacebookStrategy from "passport-facebook";
+import GoogleStrategy from "passport-google-oauth20";
 // Import Facebook and Google OAuth apps configs
-import { facebook, google } from './config';
+import { facebook, google } from "./config";
 
 // Transform Facebook profile because Facebook and Google profile objects look different
 // and we want to transform them into user objects that have the same set of attributes
@@ -46,19 +46,19 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Set up Facebook auth routes
-app.get('/auth/facebook', passport.authenticate('facebook'));
+app.get("/auth/facebook", passport.authenticate("facebook"));
 
-app.get('/auth/facebook/callback',
-  passport.authenticate('facebook', { failureRedirect: '/auth/facebook' }),
+app.get("/auth/facebook/callback",
+  passport.authenticate("facebook", { failureRedirect: "/auth/facebook" }),
   // Redirect user back to the mobile app using Linking with a custom protocol OAuthLogin
-  (req, res) => res.redirect('OAuthLogin://login?user=' + JSON.stringify(req.user)));
+  (req, res) => res.redirect("OAuthLogin://login?user=" + JSON.stringify(req.user)));
 
 // Set up Google auth routes
-app.get('/auth/google', passport.authenticate('google', { scope: ['profile'] }));
+app.get("/auth/google", passport.authenticate("google", { scope: ["profile"] }));
 
-app.get('/auth/google/callback',
-  passport.authenticate('google', { failureRedirect: '/auth/google' }),
-  (req, res) => res.redirect('OAuthLogin://login?user=' + JSON.stringify(req.user)));
+app.get("/auth/google/callback",
+  passport.authenticate("google", { failureRedirect: "/auth/google" }),
+  (req, res) => res.redirect("OAuthLogin://login?user=" + JSON.stringify(req.user)));
 
 // Launch the server on the port 3000
 const server = app.listen(3000, () => {
