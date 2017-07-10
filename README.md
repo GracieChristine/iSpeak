@@ -3,7 +3,7 @@
 Video Demo: https://youtu.be/PvWy-7EJgfo
 
 ## Project Description
-A native mobile app easing language barrier via utilizing Google Translate and Oxford Dictionary APIs.
+An extension of Recognize Inc, it is a mobile app easing language barrier via utilizing Google Translate and Oxford Dictionary APIs.
 
 ## What problem does your project solve?
 On your phone - iPhone or Android - it has access to text translation, text definition, and much more.
@@ -32,5 +32,6 @@ Oxford Dictionary API - Define English text with standard definition.
 React Native, JavaScript, Oauths, APIs Integration, Xcode, RESTful Express.JS, Knex, PostgreSQL
 
 ## Feature list
-1. Translation
-2. Dictionary
+1. Transcription
+2. Translation
+3. Dictionary
